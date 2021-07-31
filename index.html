@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any to go</title>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <style>
+        textarea {
+            width: 100vw;
+            height: 300px;
+            font-size: 20px;
+        }
+        #buttons{
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="input"></textarea>
+    <div id="buttons">
+        <button id="url">url to go</button>
+        <button id="json">json to go</button>
+    </div>
+    <textarea name="" id="output"></textarea>
+    <script>
+        $("#url").on("click", function () {
+            var text=$("#input").val()
+            url=new URL(text)
+            // value: string, key: string, parent: URLSearchParams
+            url.searchParams.forEach(function (value, key, parent) {
+                var field=format(key)
+
+                if (typeof(value)=="string" ){
+
+                }else if (typeof(value)=="string" ){
+
+                }
+            })
+
+            function isNumber(val) {
+                var regPos = /^\d+(\.\d+)?$/;//非负浮点数
+                var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;//负浮点数
+                if(regPos.test(val) || regNeg.test(val)) {
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+
+
+
+            // type WifiDogAuth struct {
+            //     Stage    string `form:"stage"`
+            //     IP       string `form:"ip"`
+            //     MAC      string `form:"mac"`
+            //     Token    string `form:"token"`
+            //     Incoming int64  `form:"incoming"`
+            //     Outgoing int64  `form:"outgoing"`
+            //     GwId     string `form:"gw_id"`
+            // }
+        })
+
+        function format(v){
+            return v.substring(0,1).toUpperCase()+v.substring(1)
+        }
+    </script>
+</body>
+
+</html>
